@@ -23,8 +23,15 @@ const char* findSubstring(const char* str, const char* substr)
 	return NULL;
 }
 
+/*
+ * Prints arguments with substr argv[1]
+*/
 int main(int argc, char** argv)
 {
-	const char* ptr = findSubstring("one two three", "two");
-	printf("%s\n", ptr);
+	for (int i = 2; i < argc; i++) {
+		if(findSubstring(argv[i], argv[1])) {
+			printf("%s\n", argv[i]);
+		}
+	}
+		
 }
